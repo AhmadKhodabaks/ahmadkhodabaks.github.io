@@ -106,12 +106,11 @@ Created by Ahmad Khodabaks.
 
 ### Installation
 
-1. Download .NET 6.0 Framework [https://dotnet.microsoft.com/en-us/download/dotnet](https://dotnet.microsoft.com/en-us/download/dotnet)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://gitlab.com/PauliusAle/MovieCharactersAPI.git
+   git clone https://github.com/AhmadKhodabaks/Komputer-Store-App.git
    ```
-3. Run the program by clicking on F5 or on start debugging.
+2. Run the program on your localhost.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
