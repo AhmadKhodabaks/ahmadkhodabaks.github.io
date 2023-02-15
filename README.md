@@ -43,10 +43,7 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#installation">Installation</a>      
     </li>
     <li><a href="#maintainers">Maintainers</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -80,7 +77,6 @@ Work:
 3. The work shows the option to deposit the salary balance into the bank balance.
    
    3.1 An interest rate of 10% is cut off from the salary.
-   
    3.2 The balance after the 10% deduction is transferred to the bank balance.
 
 Laptops:
@@ -88,6 +84,8 @@ Laptops:
 1. Information is retrieved from an API.
 2. Its information is displayed on the interface of the user.
 3. User has the option to buy a laptop once there is sufficient funds on the bank balance.
+
+See 'JavaScript_Komputer Store App.pdf' for more detailed requirements for this assignment.
 
 Created by Ahmad Khodabaks.
 
