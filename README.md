@@ -104,7 +104,7 @@ Created by Ahmad Khodabaks.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Installation
+## Installation
 
 1. Clone the repo
    ```sh
