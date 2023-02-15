@@ -80,6 +80,7 @@ Work:
 3. The work shows the option to deposit the salary balance into the bank balance.
    
    3.1 An interest rate of 10% is cut off from the salary.
+   
    3.2 The balance after the 10% deduction is transferred to the bank balance.
 
 Laptops:
