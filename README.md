@@ -58,7 +58,7 @@
 
 ## About The Project
 
-This project is aimed to built a dynamic webpage using “vanilla” JavaScript of an existing API. It showcases three main sections; work, bank and laptops.
+This project is aimed to built a dynamic webpage using “vanilla” JavaScript using an existing API. It showcases three main sections; work, bank and laptops.
 
 The bank is an area where user can store funds and make bank loans.
 The work is an area where user increases earnings and deposit cash into the bank balance.
