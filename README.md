@@ -85,7 +85,7 @@ Laptops:
 2. Its information is displayed on the interface of the user.
 3. User has the option to buy a laptop once there is sufficient funds on the bank balance.
 
-See 'JavaScript_Komputer Store App.pdf' for more detailed requirements for this assignment.
+See [JavaScript_Komputer Store App.pdf](https://github.com/AhmadKhodabaks/Komputer-Store-App/blob/master/JavaScript_Komputer%20Store%20App.pdf) for more detailed requirements for this assignment.
 
 Created by Ahmad Khodabaks.
 
