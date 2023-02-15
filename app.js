@@ -8,9 +8,7 @@ const transferElement = document.getElementById("transfer");
 const workElement = document.getElementById("work");
 const salaryBalanceElement = document.getElementById("salary-balance");
 const bankBalanceElement = document.getElementById("bank-balance");
-const bankLoanToPayBalanceElement = document.getElementById(
-  "bank-loan-to-pay-balance"
-);
+const bankLoanToPayBalanceElement = document.getElementById("bank-loan-to-pay-balance");
 const bankLoanInfoElement = document.getElementById("bank-loan-info");
 const workLoanButtonElement = document.getElementById("work-loan-button");
 const repayLoanElement = document.getElementById("repay-loan");
@@ -36,10 +34,7 @@ let salaryBalance = 0;
 /*****************/
 
 function formatCurrency(value, currency) {
-  return value.toLocaleString("en-US", {
-    style: "currency",
-    currency: currency,
-  });
+  return value.toLocaleString("en-US", {style: "currency", currency: currency,});
 }
 
 /*
@@ -47,11 +42,7 @@ function formatCurrency(value, currency) {
  */
 function WorkToGetSalary() {
   salaryBalance += 100;
-  alert(
-    `You have earned: $100.00. Your salary balance is now: $${salaryBalance.toFixed(
-      2
-    )}.`
-  );
+  alert(`You have earned: $100.00. Your salary balance is now: $${salaryBalance.toFixed(2)}.`);
   salaryBalanceElement.innerHTML = formatCurrency(salaryBalance, "USD");
 }
 
@@ -61,30 +52,18 @@ function TransferToBank() {
   } else {
     CalculateInterest();
     if (interestAmount > outstandingLoan) {
-      alert(
-        `An interest amount of: $${outstandingLoan} has been deducted from your salary to pay the outstanding loan. Your outstanding loan after deduction is: $${
-          outstandingLoan - outstandingLoan
-        }`
-      );
+      alert(`An interest amount of: $${outstandingLoan} has been deducted from your salary to pay the outstanding loan. Your outstanding loan after deduction is: $${outstandingLoan - outstandingLoan}`);
       salaryBalance -= outstandingLoan;
       outstandingLoan -= outstandingLoan;
       salaryBalanceElement.innerHTML = formatCurrency(salaryBalance, "USD");
-      bankLoanToPayBalanceElement.innerHTML = formatCurrency(
-        outstandingLoan,
-        "USD"
-      );
+      bankLoanToPayBalanceElement.innerHTML = formatCurrency(outstandingLoan, "USD");
     }
     if (interestAmount < outstandingLoan) {
       salaryBalance -= interestAmount;
       outstandingLoan -= interestAmount;
       salaryBalanceElement.innerHTML = formatCurrency(salaryBalance, "USD");
-      bankLoanToPayBalanceElement.innerHTML = formatCurrency(
-        outstandingLoan,
-        "USD"
-      );
-      alert(
-        `An interest amount of: $${interestAmount} has been deducted from your salary to pay the outstanding loan. Your outstanding loan after deduction is: $${outstandingLoan}`
-      );
+      bankLoanToPayBalanceElement.innerHTML = formatCurrency(outstandingLoan,"USD");
+      alert(`An interest amount of: $${interestAmount} has been deducted from your salary to pay the outstanding loan. Your outstanding loan after deduction is: $${outstandingLoan}`);
     }
     bankBalance += salaryBalance;
     salaryBalance -= salaryBalance;
@@ -98,27 +77,21 @@ function TransferToBank() {
  */
 function GetALoan() {
   if (outstandingLoan > 0) {
-    alert(
-      `You already have an outstanding loan of $${outstandingLoan}. You may not have two loans at once. The initial loan should be paid back in full.`
-    );
+    alert(`You already have an outstanding loan of $${outstandingLoan}. You may not have two loans at once. The initial loan should be paid back in full.`);
   } else {
     const amount = prompt("Enter amount to borrow.");
     const amountInt = parseInt(amount);
     if (isNaN(amountInt) || !Number.isInteger(+amountInt)) {
       alert("Please enter a valid integer amount.");
     } else if (amountInt > bankBalance * 2) {
-      alert(
-        `You cannot get more than double the loan of your bank balance. Your current bank balance is: $${bankBalance}.`
-      );
+      alert(`You cannot get more than double the loan of your bank balance. Your current bank balance is: $${bankBalance}.`);
     } else {
       outstandingLoan += amountInt;
       alert(`A loan of amount $${amountInt} has been granted to you.`);
       bankLoanInfoElement.classList.remove("hidden");
       workLoanButtonElement.classList.remove("hidden");
       bankLoanToPayBalanceElement.innerHTML = formatCurrency(
-        outstandingLoan,
-        "USD"
-      );
+        outstandingLoan, "USD");
     }
   }
 }
@@ -129,24 +102,13 @@ function CalculateInterest() {
 }
 function RepayLoan() {
   if (salaryBalance === 0) {
-    alert(
-      `You cannot repay while your salary balance is nill. Try again after working.`
-    );
+    alert(`You cannot repay while your salary balance is nill. Try again after working.`);
   }
-  if (
-    outstandingLoan > 0 &&
-    salaryBalance > 0 &&
-    outstandingLoan <= salaryBalance
-  ) {
-    alert(
-      `An amount of: ${outstandingLoan} has been deducted from your salary balance to pay the outstanding loan.`
-    );
+  if (outstandingLoan > 0 && salaryBalance > 0 && outstandingLoan <= salaryBalance) {
+    alert(`An amount of: ${outstandingLoan} has been deducted from your salary balance to pay the outstanding loan.`);
     salaryBalance -= outstandingLoan;
     outstandingLoan -= outstandingLoan;
-    bankLoanToPayBalanceElement.innerHTML = formatCurrency(
-      outstandingLoan,
-      "USD"
-    );
+    bankLoanToPayBalanceElement.innerHTML = formatCurrency(outstandingLoan, "USD");
     salaryBalanceElement.innerHTML = formatCurrency(salaryBalance, "USD");
   }
 }
@@ -176,27 +138,21 @@ fetch(API_URL)
 
     // add event listener for select box
     laptopSelect.addEventListener("change", () => {
-      const selectedLaptop = data.find(
-        (laptop) => laptop.id == laptopSelect.value
-      );
+      const selectedLaptop = data.find((laptop) => 
+      laptop.id == laptopSelect.value);
       displayLaptopData(selectedLaptop);
     });
 
     // add event listener for buy now button
     buyNowBtn.addEventListener("click", () => {
-      const selectedLaptop = data.find(
-        (laptop) => laptop.id == laptopSelect.value
-      );
+      const selectedLaptop = data.find((laptop) => 
+      laptop.id == laptopSelect.value);
       if (selectedLaptop.price > bankBalance) {
         alert("You cannot afford this laptop.");
       } else {
         bankBalance -= selectedLaptop.price;
         bankBalanceElement.innerHTML = bankBalance;
-        alert(
-          `Congratulations, you are now the owner of a ${
-            selectedLaptop.title
-          }! Your bank balance is now $${bankBalance.toFixed(2)}.`
-        );
+        alert(`Congratulations, you are now the owner of a ${selectedLaptop.title}! Your bank balance is now $${bankBalance.toFixed(2)}.`);
       }
     });
   });
